@@ -62,10 +62,25 @@ function start() {
 // Reset everything:
 
 function reset() {
+  clearInterval(interval);
+  interval = null;
+  timer = [0, 0, 0, 0];
+  timerRunning = false;
 
+  testArea.value = "";
+  theTimer.innerHTML = "00:00:00";
+  testWrapper.style.borderColor = "grey";
 }
 
 // Event listeners for keyboard input and the reset button:
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
+
+
+// Ideas to improve:
+//
+// add wpm calculation
+// add custom text
+// add array of texts to choose from
+// add high score for each text
